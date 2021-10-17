@@ -14,7 +14,7 @@ const Schema = new mongoose.Schema({
 const Posts = mongoose.model('posts', Schema);
 
 const getAll = async () => {
-  return await Posts.find();
+  return await Posts.find().sort({ title: 1 });
 }
 
 const getOne = async (id) => {

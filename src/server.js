@@ -1,3 +1,7 @@
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 const express = require('express');
 const routes = require('./routes');
 const config = require('./config/config');
@@ -10,4 +14,4 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
-app.listen(config.port, () => console.log(`Example app listening on port ${config.port}`));
+app.listen(config.port, () => console.log(`App listening on port ${config.port}`));
