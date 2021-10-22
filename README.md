@@ -45,4 +45,4 @@ No console digite:
   npm run start:dev
   ```
   
-  https://www.linkedin.com/in/marcosfaneli/
+ Made with by Marcos Faneli :wave: [Get in touch!](https://www.linkedin.com/in/marcosfaneli/)
