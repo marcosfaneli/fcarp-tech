@@ -28,13 +28,25 @@ routes.get('/posts/view/:id', async (req, res) => {
 });
 
 routes.post('/posts', async (req, res) => {
-  await posts.create({ ...req.body });
-  res.redirect('/');
+  try {
+    await posts.create({ ...req.body });
+    res.redirect('/');
+  } catch (e) {
+    res.render('error', {
+      error: e.message,
+    });
+  }
 });
 
 routes.post('/posts/:id/comments', async (req, res) => {
-  await comments.create(req.params.id, req.body.body);
-  res.redirect(`/posts/view/${req.params.id}`);
+  try {
+    await comments.create(req.params.id, req.body.body);
+    res.redirect(`/posts/view/${req.params.id}`);
+  } catch (e) {
+    res.render('error', {
+      error: e.message,
+    });
+  }
 });
 
 module.exports = routes;

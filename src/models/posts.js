@@ -22,6 +22,9 @@ const getOne = async (id) => {
 }
 
 const create = async (post) => {
+  if (!post.title || !post.body) {
+    throw new Error('Title and body are required');
+  }
   await Posts.create(post);
 }
 
